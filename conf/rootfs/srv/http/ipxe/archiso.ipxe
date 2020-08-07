@@ -1,0 +1,9 @@
+#!ipxe
+echo Boot menu
+menu Selection
+item archlinux archlinux
+
+choose --default archlinux --timeout 3000 os && goto ${os}
+
+:archlinux
+sanboot http://192.168.2.231/iso/archlinux-2020.05.01-x86_64.iso
